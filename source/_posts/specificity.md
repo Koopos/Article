@@ -16,33 +16,43 @@ css 是层叠样式，当多个样式同时作用于一个元素时，如果属�
 
 ## 2.四种权重类型
 
+*权重比较从最高位到最低位依次比较*
+
 ---
 
-- 行内样式  => 1000
-- id  => 100
-- 属性、类名、伪类  => 10
-- 元素，伪元素  => 1
+- 行内样式  => (1,0,0,0)
+- id  => (0,1,0,0)
+- 属性、类名、伪类  => (0,0,1,0)
+- 元素，伪元素  => (0,0,0,1)
+
 
 
 ```javascript
-  <div class="message">
-    <!--行内样式权重为 1000-->
+  <div class="message" id="m">
+    <!--行内样式权重为 (1,0,0,0)-->
     <div class="message__title" id="m-title" style="color:black">标题</div>
     <div class="message__content"></div>
   </div>
 
   <style>
   #m-title {
-    color: lightblue; //权重:100
+    color: lightblue; //权重:(0,1,0,0)
+  }
+  div#m-title {
+    color: yellow; //权重:(0,1,0,1)
+  }
+  #m #m-title {
+    color: purple; //权重:(0,2,0,0)
   }
   .message .message__title { 
-    color: green;  //权重:11
+    color: green;  //权重: (0,0,2,0)
   }
   .message__title {
-    color: red; //权重:10
+    color: red; //权重:(0,0,1,0)
   }
-
-
+  .message__title[id="m-title"] {
+    color: grey; // 权重: (0,0,2,0)
+  }
   </style>
 
 ```
