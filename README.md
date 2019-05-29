@@ -7,7 +7,7 @@ Koopos Article
 ### algorithm
 
 ### css
-1. [css3 specificity](/source/_posts/specificity.md)
+1. [css 优先级剖析](/source/_posts/specificity.md)
 
 ### data-vision
 
