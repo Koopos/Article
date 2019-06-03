@@ -1,21 +1,21 @@
 ---
-title: css 权重问题剖析
+title: css counter 使用
 date: 2019-05-09 11:39
-tags: css counter
+tags: css 
 ---
 
 ## 1.css3有个新的功能counter
 
 ---
 
-ul,ol两种列表有其局限性，比如不能自定义起始值，不能指定step，不能自定义序号的文案。counter出现就是为了解决类似需求。
+ul,ol 两种列表有其局限性，比如不能自定义起始值，不能指定 step，不能自定义序号的文案。counter 出现就是为了解决类似需求。
 
 ## 2.两个常用的属性
 
 ---
 
 - counter-reset 定义一个计数器
-- counter-increment 操作哪一个计数器，设置step为多少
+- counter-increment 操作哪一个计数器，设置 step 为多少
 
 ```css 
 
@@ -41,6 +41,6 @@ ul,ol两种列表有其局限性，比如不能自定义起始值，不能指定
 ## 3.有趣用途
 ---
 
-- 可以用纯css实现计算表单校验错误的数目 （invalid伪类）
+- 可以用纯 css 实现计算表单校验错误的数目 （invalid 伪类）
 
 - 可以统计一共有多少章节
